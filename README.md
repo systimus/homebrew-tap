@@ -1,6 +1,6 @@
 # homebrew-tap
 
-Homebrew formulae for [Praxis](https://praxis-ai.io) — the AI-native development environment.
+Homebrew formulae for [Praxis](https://praxis-ai.io) — behavioral intelligence for AI agents.
 
 ## Install
 

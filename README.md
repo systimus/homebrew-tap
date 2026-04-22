@@ -8,9 +8,9 @@ Homebrew formulae for [Praxis](https://praxis-ai.io) — behavioral intelligence
 brew install systimus/tap/praxis-proxy
 ```
 
-After install, configure your API key and per-tool setup at the
-[Praxis setup page](https://praxis-ai.io/setup) for full onboarding
-(API key, per-tool config, test connection).
+After install, create an API token at
+[praxis-ai.io/connect](https://praxis-ai.io/connect) and set it
+as `PRAXIS_API_KEY` in your environment.
 
 ## What's here
 

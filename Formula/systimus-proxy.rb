@@ -4,27 +4,27 @@
 class SystimusProxy < Formula
   desc "Local HTTPS passthrough for Claude Code that captures exact AI spend"
   homepage "https://systimus.io"
-  version "v0.1.0"
+  version "0.1.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/systimus/systimus/releases/download/proxy-vv0.1.0/systimus-proxy-v0.1.0-darwin-arm64.tar.gz"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.1.0/systimus-proxy-0.1.0-darwin-arm64.tar.gz"
       sha256 "952a3ecfc31b0f5747bdd1b29d1a7efbbb6c79c1a98028f8ac2997907fefe450"
     end
     on_intel do
-      url "https://github.com/systimus/systimus/releases/download/proxy-vv0.1.0/systimus-proxy-v0.1.0-darwin-amd64.tar.gz"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.1.0/systimus-proxy-0.1.0-darwin-amd64.tar.gz"
       sha256 "f45531619ab7d94383dd8d604cc74d353522b8ae864003dae2fd8a3b7b82e9ff"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/systimus/systimus/releases/download/proxy-vv0.1.0/systimus-proxy-v0.1.0-linux-arm64.tar.gz"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.1.0/systimus-proxy-0.1.0-linux-arm64.tar.gz"
       sha256 "17b5ab0249731955561fbd6456a6cc47cb185e635e09119263dc821580c69979"
     end
     on_intel do
-      url "https://github.com/systimus/systimus/releases/download/proxy-vv0.1.0/systimus-proxy-v0.1.0-linux-amd64.tar.gz"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.1.0/systimus-proxy-0.1.0-linux-amd64.tar.gz"
       sha256 "8b7f6ca2275ef78b25cb49a4a0e352f49f8c59f701eec843eec08dc1f8bc67fd"
     end
   end
@@ -43,10 +43,6 @@ class SystimusProxy < Formula
       Spool lives at ~/.systimus/proxy/events.db and is not removed on
       `brew uninstall`. Remove it manually if you're uninstalling for good:
         rm -rf ~/.systimus/proxy
-
-      macOS Gatekeeper: if the binary is unsigned, macOS may block it.
-      Remove the quarantine flag to run:
-        xattr -d com.apple.quarantine "$(brew --prefix)/bin/systimus-proxy"
     EOS
   end
 

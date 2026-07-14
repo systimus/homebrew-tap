@@ -4,28 +4,28 @@
 class SystimusProxy < Formula
   desc "Local HTTPS passthrough for Claude Code that captures exact AI spend"
   homepage "https://systimus.io"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.2.0/systimus-proxy-0.2.0-darwin-arm64.tar.gz"
-      sha256 "c6b021885b43890c0a9da43af3f5b363afb26cd87164b1c5c3683ede53181918"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-darwin-arm64.tar.gz"
+      sha256 "9c8baa266de0dff842c4493241a682012ba884dd36b2279143f9a3f902e97f21"
     end
     on_intel do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.2.0/systimus-proxy-0.2.0-darwin-amd64.tar.gz"
-      sha256 "ec80dbe566b6ea3253dba557664f707e39581ebb7e13f2daf606179f3d669577"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-darwin-amd64.tar.gz"
+      sha256 "3348dcc2ebb4c48c83937b0a3c9d05c4dd8a431967f46ced91e504d72dc76911"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.2.0/systimus-proxy-0.2.0-linux-arm64.tar.gz"
-      sha256 "ce0c6b776a2bfdc3fe8b111ac20055c8a7a5acb0c0934e23db6046faaad31fd8"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-linux-arm64.tar.gz"
+      sha256 "0b01e46413a57ec7b615af255330dcfc3f73e1d2518aca7ea835fa3b1b320b56"
     end
     on_intel do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.2.0/systimus-proxy-0.2.0-linux-amd64.tar.gz"
-      sha256 "ccd88f9d0f1b2a8071571036453a14dd411f5c800b40ca4ba9adcff26c5b7f56"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-linux-amd64.tar.gz"
+      sha256 "beaa67b3b0427e0768625d4d7e46c1f097c3453aaeb697bf2a9e320bbc759977"
     end
   end
 
@@ -47,22 +47,22 @@ class SystimusProxy < Formula
 
   def caveats
     <<~EOS
-      First-time setup (writes your API key once; persists across shells):
+      First-time setup (writes your API key and wires your shell, once):
         systimus-proxy setup
 
       Run it as a managed background service (restarts on crash, starts on login):
         brew services start systimus-proxy
 
-      Then point your client at the proxy (add to your shell profile):
-        export ANTHROPIC_BASE_URL=http://localhost:9847
+      `setup` offers to add this to your shell profile; to wire it by hand:
+        eval "$(systimus-proxy shellenv)"      # fish: systimus-proxy shellenv | source
 
       Run `systimus-proxy setup` before starting the service — without a config
       file the proxy exits on launch and the service won't stay up. Diagnostics:
         tail -f #{HOMEBREW_PREFIX}/var/log/systimus-proxy-error.log
 
-      The spool at ~/.systimus/proxy/events.db is not removed on `brew uninstall`.
-      Remove it manually if you're uninstalling for good:
-        rm -rf ~/.systimus/proxy
+      `brew uninstall` leaves your config and spooled events in place. To remove
+      them (flushes any pending spend events first):
+        systimus-proxy purge
     EOS
   end
 

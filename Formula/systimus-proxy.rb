@@ -4,28 +4,28 @@
 class SystimusProxy < Formula
   desc "Local HTTPS passthrough for Claude Code that captures exact AI spend"
   homepage "https://systimus.io"
-  version "0.3.0"
+  version "0.3.1"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-darwin-arm64.tar.gz"
-      sha256 "9c8baa266de0dff842c4493241a682012ba884dd36b2279143f9a3f902e97f21"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.1/systimus-proxy-0.3.1-darwin-arm64.tar.gz"
+      sha256 "b0b8befd9f37088174f8736bdaba971f03f6c39b1869a63e83e04fb01dd83773"
     end
     on_intel do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-darwin-amd64.tar.gz"
-      sha256 "3348dcc2ebb4c48c83937b0a3c9d05c4dd8a431967f46ced91e504d72dc76911"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.1/systimus-proxy-0.3.1-darwin-amd64.tar.gz"
+      sha256 "2b04df8fbf39d8d762363bd1cbab8893697ac965e5efbb267112bc58ca3b67b6"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-linux-arm64.tar.gz"
-      sha256 "0b01e46413a57ec7b615af255330dcfc3f73e1d2518aca7ea835fa3b1b320b56"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.1/systimus-proxy-0.3.1-linux-arm64.tar.gz"
+      sha256 "0e4682aa184345aed634c591ed6a2b4d0afba6183923f6d388c682c87942d482"
     end
     on_intel do
-      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.0/systimus-proxy-0.3.0-linux-amd64.tar.gz"
-      sha256 "beaa67b3b0427e0768625d4d7e46c1f097c3453aaeb697bf2a9e320bbc759977"
+      url "https://github.com/systimus/proxy-releases/releases/download/v0.3.1/systimus-proxy-0.3.1-linux-amd64.tar.gz"
+      sha256 "05b9f4316eaee7c8d1c7475c9742470f29da3d016745a3ae6a4f71d744f4d37d"
     end
   end
 
